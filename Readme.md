@@ -2,11 +2,27 @@
 
 ## Tugas 1: Melihat Status Proses
 
+```bash
+top
+```
+
+![App Screenshot](/Image/1.png)
+
+```bash
+ps
+```
+
+![App Screenshot](/Image/2.png)
+
 ### a. Nama-nama proses yang bukan root:
 
 ```bash
 ps -au | grep -v root
 ```
+
+![App Screenshot](/Image/3.png)
+
+![App Screenshot](/Image/4.png)
 
 ### b. PID dan COMMAND dari proses yang paling banyak menggunakan CPU time:
 
@@ -14,11 +30,15 @@ ps -au | grep -v root
 ps -eo pid,comm,%cpu --sort=-%cpu | head -n 2
 ```
 
+![App Screenshot](/Image/5.png)
+
 ### c. Buyut proses dan PID dari proses tersebut:
 
 ```bash
 pstree -p [PID]
 ```
+
+![App Screenshot](/Image/6.png)
 
 ### d. Beberapa proses daemon:
 
@@ -26,15 +46,27 @@ pstree -p [PID]
 ps aux | grep "[d] "
 ```
 
+![App Screenshot](/Image/7.png)
+
 ### e. Mencatat PID yang paling besar dan membuat urutan proses sampai ke PPID = 1:
 
 ```bash
 ps aux --sort=-pid | awk 'NR==1{print $2}' | xargs pstree -p
 ```
 
+![App Screenshot](/Image/8.png)
+
 ## Tugas 2: Modifikasi Program prog.sh
 
 Skrip shell `prog.sh` yang sudah dimodifikasi menggunakan trap untuk menangani sinyal.
+
+![App Screenshot](/Image/9.png)
+
+![App Screenshot](/Image/10.png)
+
+![App Screenshot](/Image/11.png)
+
+![App Screenshot](/Image/Stop%20prog.png)
 
 ## Tugas 3: Modifikasi Program myjob.sh
 
@@ -57,6 +89,16 @@ done
 # Untuk menghentikan proses, gunakan:
 # kill -15 [Nomor PID]
 ```
+
+![App Screenshot](/Image/12.png)
+
+![App Screenshot](/Image/13.png)
+
+![App Screenshot](/Image/14.png)
+
+![App Screenshot](/Image/Stop%20myjob.png)
+
+![App Screenshot](/Image/ls%20-l.png)
 
 ## Kesimpulan
 
